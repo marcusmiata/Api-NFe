@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes API</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div>
+        <h1>Rotina para Enviar uma NFe</h1>
+        <p> Site será posteiormente convertido para uma WebView android </p>
+    </div>
+
+    <span id = "main">
+        <section>
+            <div>
+                <h2> Primeiro devemos criar a NFe na Api</h2>
+                <button id="create">1 - Criar NFe</button>   
+                <button id = "delete"> 0 - Excluir NFe teste</button>
+            </div>
+            <div>
+                <h2> Depois devemos validar se a NFe criada é valida</h2>
+                <button id="validate">2 - Validar NFe</button>        
+            </div>
+            <div>
+                <h2> Após a validação podemos tentar transmitir a NFe</h2>
+                <button id="transfer">3 - Transmitir NFe</button>    
+            </div>    
+        </section>
+
+        <section>
+            
+            <div>
+                <h2> Depois podemos verificar o status da NFe, na verdade esta função verifica o status da empresa</h2>
+                <button id="verify">4 - Status NFe</button>   
+            </div>
+            <div>
+                <h2> E gerar um PDF da NFe</h2>
+                <button id="pdf">5 - Gerar PDF</button>        
+            </div>
+            <div>
+                <h2> E por fim enviar por e-mail</h2>
+                <button id="send">6 - Enviar NFe</button>    
+            </div>    
+        </section>
+    </span>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
