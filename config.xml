@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.acc.nfesApi" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Api Nfe</name>
+    <description>App feito para testes na api de geração de nota fiscais eletronicas</description>
+    <author email="viniciusmiata@gmail.com">
+        Marcus Vinicius Miata
+    </author>
+    <content src="index.html" />
+    <allow-navigation href="https://fiscal.ogestor.com.br/*" />
+    <allow-intent href="https://fiscal.ogestor.com.br/*" />
+    <access origin="https://fiscal.ogestor.com.br" />
+    <content-security-policy
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: https://ssl.gstatic.com https://fiscal.ogestor.com.br; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src 'self' https://fiscal.ogestor.com.br;">
+    </content-security-policy>
+</widget>
