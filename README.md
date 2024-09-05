@@ -38,4 +38,16 @@ Para instalar:
 ```bash
 cordova plugin add cordova-plugin-advanced-http
 ```
+## Para executar
 
+Se estiver com celular conectado via USB, e a função depurar USB estiver ativada
+
+```bash
+cordova run android
+```
+
+Caso não esteja pode gerar o APK, e transferir para o smartphone, codigo para gerar apk:
+
+```bash
+cordova build android
+```
