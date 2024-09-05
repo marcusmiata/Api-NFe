@@ -27,6 +27,15 @@ Para instalar:
 
 ```bash
 cordova plugin add cordova-plugin-dialogs
-cordova-plugin-advanced-http
+```
+
+### `cordova-plugin-advanced-http`
+
+Utilizado para fazer as requisições na API, no lugar do "fetch".
+
+Para instalar:
+
+```bash
+cordova plugin add cordova-plugin-advanced-http
 ```
 
