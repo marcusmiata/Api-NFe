@@ -1,4 +1,4 @@
-# Projeto de Envio de Notas Fiscais com Cordova
+s# Projeto de Envio de Notas Fiscais com Cordova
 
 Este projeto Cordova tem como objetivo permitir o envio de notas fiscais via JSON para uma API fiscal, utilizando plugins Cordova para realizar requisições HTTP avançadas e exibir notificações.
 
