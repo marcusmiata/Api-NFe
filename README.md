@@ -1,53 +1,44 @@
-s# Projeto de Envio de Notas Fiscais com Cordova
+# Projeto de Integração com API de NF-e
 
-Este projeto Cordova tem como objetivo permitir o envio de notas fiscais via JSON para uma API fiscal, utilizando plugins Cordova para realizar requisições HTTP avançadas e exibir notificações.
+Este projeto realiza a integração com uma API de emissão e gerenciamento de Notas Fiscais Eletrônicas (NF-e). Utiliza o plugin `cordova-plugin-advanced-http` para fazer requisições HTTP e inclui funcionalidades como gravação, validação, transmissão e envio de NF-e por e-mail, além da geração de PDFs e exclusão de notas.
 
 ## Funcionalidades
 
-- Enviar notas fiscais para a API.
-- Validar notas fiscais.
-- Transmitir e verificar o status de notas fiscais.
-- Gerar PDF de notas fiscais.
-- Enviar notas fiscais por e-mail.
-- Excluir notas fiscais.
+- **Gravação de NF-e**: Grava os dados de uma Nota Fiscal no sistema.
+- **Validação de NF-e**: Valida a Nota Fiscal no ambiente fiscal.
+- **Transmissão de NF-e**: Transmite a NF-e para o órgão fiscal.
+- **Geração de PDF**: Gera o PDF da NF-e para download ou visualização.
+- **Envio de NF-e por e-mail**: Envia a NF-e por e-mail ao destinatário.
+- **Exclusão de NF-e**: Exclui a NF-e do sistema.
+- **Consulta de todas as NF-es**: Lista todas as NF-es cadastradas.
 
-## Pré-requisitos
+## Dependências
 
-Antes de começar, certifique-se de ter instalado o Node.js e o Cordova CLI.
+- **Apache Cordova**
+- **cordova-plugin-advanced-http**
+- **CryptoJS**: Para gerar tokens de autenticação.
 
-## Instalação de Plugins Cordova
+## Como Executar
 
-Este projeto utiliza os seguintes plugins Cordova:
+1. Configure o Apache Cordova no seu projeto.
+2. Adicione o plugin `cordova-plugin-advanced-http` com o comando:
+   ```bash
+   cordova plugin add cordova-plugin-advanced-http
+3. Inclua as credenciais da empresa, chave de acesso e dados da NF-e no código.
+4. Execute o projeto no dispositivo.
 
-### `cordova-plugin-dialogs`
+## Estrutura de Funções
+- gerarToken(codigoEmpresa): Gera o token de autenticação para as requisições.
+- enviarRequisicao(url, method, data, sucessoCallback, erroCallback): Função genérica para lidar com requisições HTTP.
+- **Funções específicas**:
+- - gravarNfe(codigoEmpresa, chaveAcesso, notaFiscal)
+- - validarNfe(codigoEmpresa, chaveAcesso, nNF)
+- - transmitirNfe(codigoEmpresa, chaveAcesso, nNF)
+- - getPDF(codigoEmpresa, chaveAcesso, nNF)
+- - enviarEmail(codigoEmpresa, chaveAcesso, nNF, email)
+- - apagarNFe(codigoEmpresa, chaveAcesso, nNF)
+- - verTudo(codigoEmpresa, chaveAcesso)
 
-Utilizado para exibir alertas nativos no aplicativo.
+## Eventos de Botões
 
-Para instalar:
-
-```bash
-cordova plugin add cordova-plugin-dialogs
-```
-
-### `cordova-plugin-advanced-http`
-
-Utilizado para fazer as requisições na API, no lugar do "fetch".
-
-Para instalar:
-
-```bash
-cordova plugin add cordova-plugin-advanced-http
-```
-## Para executar
-
-Se estiver com celular conectado via USB, e a função depurar USB estiver ativada
-
-```bash
-cordova run android
-```
-
-Caso não esteja pode gerar o APK, e transferir para o smartphone, codigo para gerar apk:
-
-```bash
-cordova build android
-```
+Os eventos de clique dos botões são configurados para acionar as funções correspondentes. Cada botão está associado a uma funcionalidade da API.
