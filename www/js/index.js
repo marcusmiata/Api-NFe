@@ -273,7 +273,7 @@ function validarNfe(codigoEmpresa, chaveAcesso, nNF) {
 }
 
 function transmitirNfe(codigoEmpresa, chaveAcesso, nNF) {
-  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=transmitirNfce&nNF=${nNF}&debug=1`;
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=transmitirNfe&nNF=${nNF}&debug=1`;
   enviarRequisicao(url, 'GET', null, (resposta) => sucessoHandler('Transmissão', resposta), erroHandler);
 }
 
