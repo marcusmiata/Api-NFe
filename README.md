@@ -31,13 +31,13 @@ Este projeto realiza a integração com uma API de emissão e gerenciamento de N
 - gerarToken(codigoEmpresa): Gera o token de autenticação para as requisições.
 - enviarRequisicao(url, method, data, sucessoCallback, erroCallback): Função genérica para lidar com requisições HTTP.
 - **Funções específicas**:
-- - gravarNfe(codigoEmpresa, chaveAcesso, notaFiscal)
-- - validarNfe(codigoEmpresa, chaveAcesso, nNF)
-- - transmitirNfe(codigoEmpresa, chaveAcesso, nNF)
-- - getPDF(codigoEmpresa, chaveAcesso, nNF)
-- - enviarEmail(codigoEmpresa, chaveAcesso, nNF, email)
-- - apagarNFe(codigoEmpresa, chaveAcesso, nNF)
-- - verTudo(codigoEmpresa, chaveAcesso)
+    - ```bash gravarNfe(codigoEmpresa, chaveAcesso, notaFiscal)```
+    - ```bash validarNfe(codigoEmpresa, chaveAcesso, nNF)```
+    - ```bash transmitirNfe(codigoEmpresa, chaveAcesso, nNF)```
+    - ```bash getPDF(codigoEmpresa, chaveAcesso, nNF)```
+    - ```bash enviarEmail(codigoEmpresa, chaveAcesso, nNF, email)```
+    - ```bash apagarNFe(codigoEmpresa, chaveAcesso, nNF)```
+    - ```bash verTudo(codigoEmpresa, chaveAcesso)```
 
 ## Eventos de Botões
 
