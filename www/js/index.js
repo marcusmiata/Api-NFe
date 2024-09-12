@@ -19,542 +19,334 @@
 
 // ===========================================================================================================================
 // ===================================== Constantes =====================================
-const numeroDocumento = "NFe31240705642329000170550010001036181101036208";
-const email = "viniciusmiata@gmail.com";
+const exNumeroDocumento = "NFe31240705642329000170550010001036181101036208";
+const exEmail = "viniciusmiata@gmail.com";
 const UF = "MG";
-const codigoEmpresa = "12289";
+const exCodigoEmpresa = "9618";
 const mode = "false"; // True ou falso, para mode de contingencia
-const notaFiscal = {
-    "chave": "31240705642329000170550010001036181101036188",
-    "ide": {
+const exnNf = "2040";
+const exNotaFiscal = {
+  "chave": "31240905642329000331550010000021401100021400",
+  "ide": {
       "cUF": "31",
-      "cNF": "00000011",
-      "natOp": "VENDA",
+      "cNF": "10002140",
+      "natOp": "RETORNO DE REMESSA P/ DEP. FECH",
       "mod": "55",
-      "serie": "1", // Faz parte do codigo
-      "nNF": "000000001", // parte do codigo
-      "dhEmi": "2024-07-31T16:06:25-03:00",
-      "dhSaiEnt": "2024-07-31T16:26:31-03:00",
+      "serie": "1",
+      "nNF": "2040",
+      "dhEmi": "2024-09-10T10:37:24-03:00",
+      "dhSaiEnt": "2024-09-10T10:57:16-03:00",
       "tpNF": "1",
       "idDest": "1",
       "cMunFG": "3152501",
       "tpImp": "1",
       "tpEmis": "1",
-      "cDV": "8",
-      "tpAmb": "2", // Homologação
+      "cDV": "0",
+      "tpAmb": "2",
       "finNFe": "1",
       "indFinal": "0",
       "indPres": "9",
       "indIntermed": "0",
       "procEmi": "3",
-      "verProc": "4.01 b037"
-    },
-    "emit": {
-      "CNPJ": "05642329000170",
+      "verProc": "4.01_sebrae_b037"
+  },
+  "emit": {
+      "CNPJ": "05642329000331",
       "xNome": "GUIMARAES CANDIDO SOUZA CIA LTDA",
       "enderEmit": {
-        "xLgr": "AV ALBERTO DE BARROS COBRA",
-        "nro": "576",
-        "xBairro": "N. POUSO ALEGRE",
-        "cMun": "3152501",
-        "xMun": "POUSO ALEGRE",
-        "UF": "MG",
-        "CEP": "37550000",
-        "cPais": "1058",
-        "xPais": "BRASIL"
+          "xLgr": "RUA MAURO BRANDAO",
+          "nro": "68",
+          "xBairro": "NOVA POUSO ALEGR",
+          "cMun": "3152501",
+          "xMun": "POUSO ALEGRE",
+          "UF": "MG",
+          "CEP": "37550000",
+          "cPais": "1058",
+          "xPais": "BRASIL"
       },
-      "IE": "5252313220055",
+      "IE": "5252313220217",
       "CRT": "3"
-    },
-    "dest": {
-      "CNPJ": "40270073000118",
-      "xNome": "JOSE GABRIEL CANCIO FERREIRA 18272",
+  },
+  "dest": {
+      "CNPJ": "05642329000170",
+      "xNome": "GUIMARAES CANDIDO SOUZA E CIA LTDA 1",
       "enderDest": {
-        "xLgr": "ROD BR 267 KM491",
-        "nro": "0",
-        "xBairro": "RODOVIA",
-        "cMun": "3105301",
-        "xMun": "BANDEIRA DO SUL",
-        "UF": "MG",
-        "CEP": "37740000",
-        "cPais": "1058",
-        "xPais": "BRASIL"
+          "xLgr": "AV ALBERTO DE BARROS COBRA",
+          "nro": "576",
+          "xCpl": "1",
+          "xBairro": "NOVA POUSO ALEGRE",
+          "cMun": "3152501",
+          "xMun": "POUSO ALEGRE",
+          "UF": "MG",
+          "CEP": "37550000",
+          "cPais": "1058",
+          "xPais": "BRASIL"
       },
       "indIEDest": "1",
-      "IE": "0039316110050",
-      "email": "postocorujao21@gmail.com"
-    },
-    "det": [
+      "IE": "5252313220055",
+      "email": "guimaraescpd@gmail.com"
+  },
+  "det": [
       {
-        "nItem": "1",
-        "prod": {
-          "cProd": "388",
-          "cEAN": "7893789310063",
-          "xProd": "CHESTERFIELD ORIGINAL 4.0 KS R 7893789310063",
-          "NCM": "24022000",
-          "CEST": "0400100",
-          "CFOP": "5405",
-          "uCom": "PT",
-          "qCom": "1.0000",
-          "vUnCom": "59.9000",
-          "vProd": "59.90",
-          "cEANTrib": "7893789310063",
-          "uTrib": "PT",
-          "qTrib": "1.0000",
-          "vUnTrib": "59.9000",
-          "vOutro": "0.73",
-          "indTot": "1"
-        },
-        "imposto": {
-          "ICMS": {
-            "ICMS60": {
-              "orig": "0",
-              "CST": "60",
-              "vBCSTRet": "0.00",
-              "pST": "0.00",
-              "vICMSSubstituto": "0.00",
-              "vICMSSTRet": "0.00"
-            }
+          "nItem": "1",
+          "prod": {
+              "cProd": "300",
+              "cEAN": "SEM GTIN",
+              "xProd": "MARLBORO FOREST FUSION MNT KSRB SEM GTIN",
+              "NCM": "24022000",
+              "CEST": "0400100",
+              "CFOP": "5906",
+              "uCom": "PT",
+              "qCom": "750.0000",
+              "vUnCom": "108.0000",
+              "vProd": "81000.00",
+              "cEANTrib": "SEM GTIN",
+              "uTrib": "PT",
+              "qTrib": "750.0000",
+              "vUnTrib": "108.0000",
+              "indTot": "1"
           },
-          "PIS": {
-            "PISNT": {
-              "CST": "08"
-            }
+          "imposto": {
+              "ICMS": {
+                  "ICMS60": {
+                      "orig": "0",
+                      "CST": "60",
+                      "vBCSTRet": "0.00",
+                      "pST": "0.00",
+                      "vICMSSubstituto": "0.00",
+                      "vICMSSTRet": "0.00"
+                  }
+              },
+              "PIS": {
+                  "PISNT": {
+                  "CST": "08"
+                  }
+              },
+              "COFINS": {
+                  "COFINSNT": {
+                      "CST": "08"
+                      }
+                  }
+              }
           },
-          "COFINS": {
-            "COFINSNT": {
-              "CST": "08"
-            }
-          }
-        }
-      },
       {
-        "nItem": "2",
-        "prod": {
-          "cProd": "427",
-          "cEAN": "7893789312487",
-          "xProd": "MARLBORO CRAFTED RED KS BOX 20 7893789312487",
-          "NCM": "24022000",
-          "CEST": "0400100",
-          "CFOP": "5405",
-          "uCom": "PT",
-          "qCom": "2.0000",
-          "vUnCom": "50.6000",
-          "vProd": "101.20",
-          "cEANTrib": "7893789312487",
-          "uTrib": "PT",
-          "qTrib": "2.0000",
-          "vUnTrib": "50.6000",
-          "vOutro": "1.22",
-          "indTot": "1"
-        },
-        "imposto": {
-          "ICMS": {
-            "ICMS60": {
-              "orig": "0",
-              "CST": "60",
-              "vBCSTRet": "0.00",
-              "pST": "0.00",
-              "vICMSSubstituto": "0.00",
-              "vICMSSTRet": "0.00"
-            }
+          "nItem": "2",
+          "prod": {
+              "cProd": "112",
+              "cEAN": "SEM GTIN",
+              "xProd": "MARLBORO GOLD KS RCB SEM GTIN",
+              "NCM": "24022000",
+              "CEST": "0400100",
+              "CFOP": "5906",
+              "uCom": "PT",
+              "qCom": "250.0000",
+              "vUnCom": "103.6000",
+              "vProd": "25900.00",
+              "cEANTrib": "SEM GTIN",
+              "uTrib": "PT",
+              "qTrib": "250.0000",
+              "vUnTrib": "103.6000",
+              "indTot": "1"
           },
-          "PIS": {
-            "PISNT": {
-              "CST": "08"
-            }
-          },
-          "COFINS": {
-            "COFINSNT": {
-              "CST": "08"
-            }
+          "imposto": {
+              "ICMS": {
+                  "ICMS60": {
+                      "orig": "0",
+                      "CST": "60",
+                      "vBCSTRet": "0.00",
+                      "pST": "0.00",
+                      "vICMSSubstituto": "0.00",
+                      "vICMSSTRet": "0.00"
+                  }
+              },
+              "PIS": {
+                  "PISNT": {
+                      "CST": "08"
+                  }
+              },
+              "COFINS": {
+                  "COFINSNT": {
+                  "CST": "08"
+                  }
+              }
           }
-        }
       }
-    ],
-    "total": {
-      "ICMSTot": {
-        "vBC": "0.00",
-        "vICMS": "0.00",
-        "vICMSDeson": "0.00",
-        "vFCP": "0.00",
-        "vBCST": "0.00",
-        "vST": "0.00",
-        "vFCPST": "0.00",
-        "vFCPSTRet": "0.00",
-        "vProd": "161.10",
-        "vFrete": "0.00",
-        "vSeg": "0.00",
-        "vDesc": "0.00",
-        "vII": "0.00",
-        "vIPI": "0.00",
-        "vIPIDevol": "0.00",
-        "vPIS": "0.00",
-        "vCOFINS": "0.00",
-        "vOutro": "1.95",
-        "vNF": "163.05"
+      ],
+      "total": {
+          "ICMSTot": {
+          "vBC": "0.00",
+          "vICMS": "0.00",
+          "vICMSDeson": "0.00",
+          "vFCP": "0.00",
+          "vBCST": "0.00",
+          "vST": "0.00",
+          "vFCPST": "0.00",
+          "vFCPSTRet": "0.00",
+          "vProd": "106900.00",
+          "vFrete": "0.00",
+          "vSeg": "0.00",
+          "vDesc": "0.00",
+          "vII": "0.00",
+          "vIPI": "0.00",
+          "vIPIDevol": "0.00",
+          "vPIS": "0.00",
+          "vCOFINS": "0.00",
+          "vOutro": "0.00",
+          "vNF": "106900.00"
       }
-    },
-    "transp": {
-      "modFrete": "3",
+  },
+  "transp": {
+      "modFrete": "4",
       "transporta": {
-        "CNPJ": "05642329000170",
-        "xNome": "GUIMARAES CANDIDO SOUZA CIA LTDA",
-        "IE": "5252313220055",
-        "xEnder": "AV. ALBERTO DE BARROS COBRA 576",
-        "xMun": "POUSO ALEGRE",
-        "UF": "MG"
+          "CNPJ": "05642329000170",
+          "xNome": "GUIMARAES CANDIDO SOUZA E CIA LTDA",
+          "IE": "5252313220055",
+          "xEnder": "AV ALBERTO DE BARROS COBRA 576 1",
+          "xMun": "POUSO ALEGRE",
+          "UF": "MG"
       },
       "vol": {
-        "qVol": "3",
-        "esp": "VOLUMES",
-        "pesoL": "0.720",
-        "pesoB": "0.750"
+          "qVol": "1000",
+          "esp": "VOLUMES",
+          "pesoL": "240.000",
+          "pesoB": "250.000"
       }
-    },
-    "pag": {
-      "detPag": {
-        "indPag": "1",
-        "tPag": "15",
-        "vPag": "163.05"
+  },
+  "pag": {
+      "detPag": [
+          {
+              "indPag": "0",
+              "tPag": "90",
+              "vPag": "0.00"
+          }
+        ]
+  },
+      "infAdic": {
+          "infAdFisco": "ICMS SUSP CFE ART 19 ANEX 3 DECRETO 38104/96 - S.T.-BC:91,250.00 Vr:15,591.50",
+          "infCpl": "DEVOLUCAO DE PRODUTOS REFERENTE A NF DE NO _104651____ DE _27/08/2024_. ; PEDIDO: 299 ; CARGA: 79 ; VENDEDOR: 11"
       }
-    },
-    "infAdic": {
-      "infAdFisco": "- S.T.-BC:175.00 Vr:23.30",
-      "infCpl": "CONVENIENCIA P: VENCIMENTO : VALOR R$ P: VENCIMENTO : VALOR R$0: 07/08/2024 : 163.05 ; PEDIDO: 69431 ; CARGA: 8 ; VENDEDOR: 8"
-    }
 }
 //======================================================================================================
+let responseString = "";
 
-
-// ====== Gerando o Token (Key) para acesso a API ======================================================
-function md5(mensagem) {
-    const hash = CryptoJS.MD5(mensagem);
-    
-    return hash.toString(CryptoJS.enc.Hex);
-    
+//======================================================================================================
+// Função utilitária para gerar o token
+function gerarToken(codigoEmpresa) {
+  return CryptoJS.MD5(CryptoJS.SHA1([codigoEmpresa] + Math.floor(Date.now() / 1000).toString())).toString(CryptoJS.enc.Hex);
 }
 
-function sha1(mensagem) {
-
-    const hash = CryptoJS.SHA1(mensagem);
-    
-    return hash.toString(CryptoJS.enc.Hex);
-    
+// Função genérica para lidar com requisições HTTP
+function enviarRequisicao(url, method, data, sucessoCallback, erroCallback) {
+  cordova.plugin.http.sendRequest(url, {
+      method: method,
+      data: data || {},
+      headers: {
+          'Content-Type': 'application/json',
+      }
+  }, sucessoCallback, erroCallback);
 }
 
-function gerarToken() {
-    return $token = md5(sha1([codigoEmpresa] + Math.floor(Date.now() / 1000).toString()));    
+// Função para exibir alertas
+function exibirAlerta(mensagem, titulo = 'Resposta da API') {
+  navigator.notification.alert(mensagem, null, titulo, 'OK');
+}
+
+// Sucesso e erro genéricos
+function sucessoHandler(titulo, resposta) {
+  responseString += `\n========== ${titulo} ==========\n` + JSON.stringify(resposta.data) + "\n";
+  //exibirAlerta(responseString, titulo);
+}
+
+function erroHandler(resposta) {
+  exibirAlerta(`Erro na requisição: ${resposta.error}`, 'Erro');
+}
+
+// Funções específicas de API
+function gravarNfe(codigoEmpresa, chaveAcesso, notaFiscal) {
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=gravarNfe`;
+  enviarRequisicao(url, 'POST', { nfe: notaFiscal }, (resposta) => sucessoHandler('Gravação', resposta), erroHandler);
+}
+
+function validarNfe(codigoEmpresa, chaveAcesso, nNF) {
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=validarNfe&nNF=${nNF}`;
+  enviarRequisicao(url, 'GET', null, (resposta) => sucessoHandler('Validação', resposta), erroHandler);
+}
+
+function transmitirNfe(codigoEmpresa, chaveAcesso, nNF) {
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=transmitirNfce&nNF=${nNF}&debug=1`;
+  enviarRequisicao(url, 'GET', null, (resposta) => sucessoHandler('Transmissão', resposta), erroHandler);
+}
+
+function getPDF(codigoEmpresa, chaveAcesso, nNF) {
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=getPDF&nNF=${nNF}`;
+  enviarRequisicao(url, 'GET', null, (resposta) => sucessoHandler('PDF', resposta), erroHandler);
+}
+
+function enviarEmail(codigoEmpresa, chaveAcesso, nNF, email) {
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=enviarNfe&nNF=${nNF}&email=${email}&debug=1`;
+  enviarRequisicao(url, 'GET', null, (resposta) => sucessoHandler('Envio de Email', resposta), erroHandler);
+}
+
+function apagarNFe(codigoEmpresa, chaveAcesso, nNF) {
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=excluirNfe&nNF=${nNF}`;
+  enviarRequisicao(url, 'GET', null, (resposta) => sucessoHandler('Exclusão', resposta), erroHandler);
+}
+
+function verTudo(codigoEmpresa, chaveAcesso) {
+  const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=getAllNfe`;
+  enviarRequisicao(url, 'GET', null, (resposta) => sucessoHandler('Todas as NF-es', resposta), erroHandler);
+}
+
+// Função principal para orquestrar chamadas
+function sendToAPI(codigoEmpresa, notaFiscal, nNF, emailCliente) {
+  const chave = gerarToken(codigoEmpresa);
+  gravarNfe(codigoEmpresa, chave, notaFiscal);
+  validarNfe(codigoEmpresa, chave, nNF);
+  transmitirNfe(codigoEmpresa, chave, nNF);
+  getPDF(codigoEmpresa, chave, nNF);
+  enviarEmail(codigoEmpresa, chave, nNF, emailCliente);
+  exibirAlerta(responseString, 'Resultado da Requisição');
 }
 
 //======================================================================================================
+// Chamadas dos botões
 
+function setupEventListeners() {
+  document.getElementById("main").addEventListener('click', function() {
+      sendToAPI(exCodigoEmpresa, exNotaFiscal, exnNf, exEmail);
+  });
 
-// === Criar Nota Fiscal para Api =====================================================================
+  document.getElementById("create").addEventListener('click', function() {
+      gravarNfe(exCodigoEmpresa, gerarToken(exCodigoEmpresa), exNotaFiscal);
+  });
 
-function gravarNfe() {
-    const chaveAcesso = gerarToken();
+  document.getElementById("validate").addEventListener('click', function() {
+      validarNfe(exCodigoEmpresa, gerarToken(exCodigoEmpresa), exnNf);
+  });
 
-    console.log(chaveAcesso)
-    // Construindo a URL da API
-    const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=gravarNfe`;
+  document.getElementById("transfer").addEventListener('click', function() {
+      transmitirNfe(exCodigoEmpresa, gerarToken(exCodigoEmpresa), exnNf);
+  });
 
-    // Fazendo a requisição usando cordova.plugin.http
-    
-    cordova.plugin.http.sendRequest(url, {
-        method: 'POST',
-        data: {
-            nfe: notaFiscal // Enviando o JSON da nota como um campo form-data chamado 'nfe'
-        },
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
+  document.getElementById("verify").addEventListener('click', function() {
+      getStatus(exCodigoEmpresa, gerarToken(exCodigoEmpresa), mode);
+  });
+
+  document.getElementById("pdf").addEventListener('click', function() {
+      getPDF(exCodigoEmpresa, gerarToken(exCodigoEmpresa), exnNf);
+  });
+
+  document.getElementById("send").addEventListener('click', function() {
+      enviarEmail(exCodigoEmpresa, gerarToken(exCodigoEmpresa), exnNf, exEmail);
+  });
+
+  document.getElementById("delete").addEventListener('click', function() {
+      apagarNFe(exCodigoEmpresa, gerarToken(exCodigoEmpresa), exnNf);
+  });
+
+  document.getElementById("all").addEventListener('click', function() {
+      verTudo(exCodigoEmpresa, gerarToken(exCodigoEmpresa));
+  });
 }
 
-document.getElementById("create").addEventListener('click', gravarNfe);
-
-
-
-//======================================================================================================
-
-
-//=== Validar NFe após criação ===========================================================================
-
-
-function validarNfe(nDocumento) {
-    const chaveAcesso = gerarToken();
-
-    // Construindo a URL da API
-    url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=validarNfe&nNF=${nDocumento}`;
-
-    cordova.plugin.http.sendRequest(url, {
-        method: 'GET',
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
-}
-
-document.getElementById("validate").addEventListener('click', function (){
-    validarNfe(numeroDocumento);
-    });
-
-
-//======================================================================================================
-
-
-//=== Transmitir NFe ===================================================================================
-
-function transmitirNfe(nDocumento) {
-    const chaveAcesso = gerarToken();
-
-    // Construindo a URL da API
-    const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=transmitirNfce&nNF=${nDocumento}&debug=1`;
-
-    cordova.plugin.http.sendRequest(url, {
-        method: 'GET',
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
-}
-
-document.getElementById("transfer").addEventListener('click', function(){
-    validarNfe(numeroDocumento);
-});
-
-//======================================================================================================
-
-
-//=== Verificar status NFe==============================================================================
-
-function getStatus(uf, modo) {
-    const chaveAcesso = gerarToken();
-
-    // Construindo a URL da API
-    const url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=getStatus&UF=${uf}&tpAmb=2&contingencia=${modo}`; 
-    // Fazendo a requisição usando fetch
-    cordova.plugin.http.sendRequest(url, {
-        method: 'GET',
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
-}
-
-document.getElementById("verify").addEventListener('click', function(){
-    getStatus(UF, mode);
-});
-
-//======================================================================================================
-
-
-//=== Gerar PDF ========================================================================================
-
-function getPDF() {
-    const chaveAcesso = gerarToken();
-
-    // Construindo a URL da API
-    url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=getPDF&nNF=000001`; 
-
-    cordova.plugin.http.sendRequest(url, {
-        method: 'GET',
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
-}
-
-document.getElementById("pdf").addEventListener('click', getStatus);
-
-//======================================================================================================
-
-
-//=== Enviar por email =================================================================================
-
-function enviarEmail(mail) {
-    const chaveAcesso = gerarToken();
-
-    // Construindo a URL da API
-    url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=enviarNfe&nNF=000001&email=${mail}&debug=1`; 
-    // Fazendo a requisição usando fetch
-    cordova.plugin.http.sendRequest(url, {
-        method: 'GET',
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
-}
-
-document.getElementById("send").addEventListener('click', function (){
-    getStatus(email);
-});
-
-//======================================================================================================
-
-
-//=== Excluir NFe ======================================================================================
-
-function apagarNFe() {
-    const chaveAcesso = gerarToken();
-
-    // Construindo a URL da API
-    url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=excluirNfe&nNF=000001`; 
-
-    // Fazendo a requisição usando fetch
-    cordova.plugin.http.sendRequest(url, {
-        method: 'GET',
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
-}
-
-document.getElementById("delete").addEventListener('click', function (){
-    apagarNFe(numeroDocumento);
-});
-
-//======================================================================================================
-
-function verTudo() {
-    const chaveAcesso = gerarToken();
-
-    // Construindo a URL da API
-    url = `https://fiscal.ogestor.com.br/api/json/4?e=${codigoEmpresa}&key=${chaveAcesso}&acao=getAllNfe&pag=1&ipp=15`; 
-
-    // Fazendo a requisição usando fetch
-    cordova.plugin.http.sendRequest(url, {
-        method: 'GET',
-    }, function(response) {
-        // Sucesso
-        navigator.notification.alert(
-            response.data, // message: o conteúdo que você quer mostrar
-            null,          // callback: função chamada quando o alerta é fechado (pode ser null se não precisar)
-            'Resposta da API', // title: o título da caixa de alerta
-            'OK'           // buttonName: o texto do botão
-        );
-        console.log(`Erro na requisição: ${response.data}`);
-    }, function(response) {
-        // Erro
-        navigator.notification.alert(
-            `Erro na requisição: ${response.error}`, // message: mensagem de erro formatada
-            null,                                  // callback: função chamada quando o alerta é fechado
-            'Erro',                                // title: título da caixa de alerta
-            'OK'                                   // buttonName: texto do botão
-        );
-        console.log(`Erro na requisição: ${response.error}`);
-    });
-}
-
-document.getElementById("all").addEventListener('click', function (){
-    verTudo();
-});
+setupEventListeners();
