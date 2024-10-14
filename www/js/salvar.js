@@ -96,4 +96,4 @@ function copiarArquivo(downloadDir, sourceFile) {
 
 // Usos
 // salvar_arquivo_json_data(json_a_ser_salvo);
-// dowload_arquivo_json(); vai fazer o download do último json que foi salvo
+// download_arquivo_json(); vai fazer o download do último json que foi salvo
