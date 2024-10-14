@@ -1,0 +1,27 @@
+ 173 FUNCTION GeraChaveNFe$   (cUF$, Emissao&, ParamCNPJ$, Serie$, Nota&, Modo$, hNotasNFe%)
+ 174    ON LOCAL ERROR GOTO TesteErroGeraSalvaChaveNFe
+        ' 
+        '          UF AAMM -----CNPJ--------- 55 SER --NRO NOTA- | -COD.NUM-- DV
+        ' fChave$="NN-NNNN-NN.NNN.NNN/NNNN-NN-NN-NNN-NNN.NNN.NNN-N-NN.NNN.NNN-N"
+        ' 
+ 182    sChave$ = cUF$ + DateToS$(Emissao&, "AAMM") + DecToS$(ParamCNPJ$) + "55" + Fill$("0", Serie$, 3) + Fill$("0", STR$(Nota&), 9) + Modo$ + "1" + Fill$("0", STR$(Nota&), 7)
+        ' 
+        ' DV da Chave
+        ' 
+ 186    Tam%   = 44
+ 187    Mult%  = 2
+ 188    Total% = 0
+ 189    FOR i% = Tam% - 1 TO 1 STEP - 1
+ 190       Total% = Total% + VAL(MID$(sChave$, i%, 1)) * Mult%
+ 191       Mult%  = Mult% + 1: IF Mult% > 9 THEN Mult% = 2
+ 192    NEXT
+ 193    Resto% = Total% MOD 11
+ 194    IF Resto% <= 1 THEN
+ 195       DV% = 0
+ 196    ELSE
+ 197       DV% = 11 - Resto%
+ 198    END IF
+        ' 
+ 200    MID$(sChave$, 44, 1) = LTRIM$(RTRIM$(STR$(DV%)))
+ 201    GeraChaveNFe$   = sChave$
+     RETURN

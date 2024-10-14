@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Impressão com SQLite</title>
+    <script type="text/javascript" src="cordova.js"></script> <!-- Cordova framework -->
+    <script type="text/javascript">
+        var lBoletoNew = false;   // true => impressão via PrinterManager (impr. Leopardo A7)
+        var lDebug     = false;   // true => somente gera o arquivo Spool.Txt
+        var lId        = "";      // Carga / NF_Boleto
+        var lPedido    = 0;       // Número   do pedido
+        var lSituacao  = "";      // Situação do pedido
+        var lPerDesc   = 0;       // Mantido por compatibilidade
+        var lDTCabec   = [];      // Array contendo os dados referente ao cabeçalho da nota
+        var lDTItens   = [];      // Array contendo os dados referente aos itens da nota
+        var lSpool     = "";      // Spool de impressão
+        var lTotQtd    = 0;       // SUM(QuaPedida) para geração do boleto
+        var lEmpresa   = "";      // ParamSe.Empresa  para geração da carga
+        var lVendedor  = 0;       // ParamSe.Vendedor para geração da carga
+        var lNome      = "";      // ParamSe.Nome     para geração da carga
+
+        
+        // A função principal para iniciar o uso do banco de dados real
+        (function () {
+            "use strict"; // Ativando modo estrito
+
+            var db; // Variável para armazenar a instância do banco de dados
+
+            document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+
+            function onDeviceReady() {
+                // Abre o banco de dados real ACCSELLER41.db
+                db = window.sqlitePlugin.openDatabase({ 
+                    name: 'AccSeller41.db', 
+                    location: '../js' 
+                }, function() {
+                    console.log("Banco de dados aberto com sucesso.");
+                }, function(error) {
+                    console.error("Erro ao abrir o banco de dados: " + error.message);
+                });
+
+                InitPage("Impressão");
+
+                var params   = window.location.search.split('&');
+                var TipoMov  = 0; // Guardar
+                var TipoDoc  = ""; // Guardar
+                var Operacao = ""; // Guardar
+                var NFOk     = false; // Pode imprimir NF do pedido?
+                var BolOk    = false; // Pode imprimir boleto do pedido?
+                var CrgOk    = false; // Pode imprimir carga?
+
+                lId = params[0].replace("?Id=", ""); // Carga ou NF_Boleto
+
+                if (lId == "NF_Bol") { // NF e/ou boleto
+                    lPedido   = params[1].replace("Pedido=", "");
+                    lSituacao = params[2].replace("Situacao=", "");
+                    TipoMov   = params[3].replace("TipoMov=", "");
+                    TipoDoc   = params[4].replace("TipoDoc=", "");
+                    Operacao  = params[5].replace("Operacao=", "");
+                    NFOk      = (lSituacao != "E" && TipoMov != 1   && gCliSeller == cGuimaraes);
+                    BolOk     = (lSituacao == "F" && TipoDoc == "5" && gCliSeller == cGuimaraes && Operacao != "2" && Operacao != "7" && Operacao != "Z");
+
+                    if (BolOk) {
+                        db.transaction(function (tx) {
+                            tx.executeSql("SELECT SUM(QuaPedida) As SumQuaPedida, SepCampo FROM PedProSe, ParamSe WHERE Pedido = ?", [lPedido],
+                                function (tx, rs) {
+                                    if (rs.rows.length > 0) {
+                                        lTotQtd    = NullValue(rs.rows.item(0).SumQuaPedida, 0); // Total
+                                        lBoletoNew = (rs.rows.item(0).SepCampo == "1"); //Novo boleto, não devo usar
+                                        InitImp(NFOk, BolOk, CrgOk);
+                                    }
+                                }, onGlobalError);
+                        });
+                    } else {
+                        InitImp(NFOk, BolOk, CrgOk);
+                    }
+                } else { // Carga
+                    CrgOk = true;
+
+                    db.transaction(function (tx) {
+                        tx.executeSql("SELECT Empresa, Vendedor, Nome FROM ParamSe", [],
+                            function (tx, rs) {
+                                if (rs.rows.length > 0) {
+                                    lEmpresa  = rs.rows.item(0).Empresa;
+                                    lVendedor = rs.rows.item(0).Vendedor;
+                                    lNome     = rs.rows.item(0).Nome;
+                                    InitImp(NFOk, BolOk, CrgOk);
+                                }
+                            }, onGlobalError);
+                    });
+                }
+            };
+
+            // Função de inicialização de página (mock)
+            function InitPage(title) {
+                console.log("Página inicializada: " + title);
+            }
+
+            // Função de inicialização de impressão (mock)
+            function InitImp(NFOk, BolOk, CrgOk) {
+                console.log("Impressão - NF: " + NFOk + ", Boleto: " + BolOk + ", Carga: " + CrgOk);
+            }
+
+            // Função de tratamento de erros
+            function onGlobalError(tx, error) {
+                console.error("Erro de transação: " + error.message);
+            }
+
+            // Função para tratar valor nulo
+            function NullValue(value, defaultValue) {
+                return value == null ? defaultValue : value;
+            }
+
+            // Mock de objetos globais para teste (exemplos simplificados)
+            var gCliSeller = "cGuimaraes"; // Vendedor fictício
+            var cGuimaraes = "cGuimaraes"; // Definindo cGuimaraes como constante
+
+        })();
+    </script>
+</head>
+<body>
+    <h1>Teste de Impressão com Banco de Dados SQLite</h1>
+    <p>Este é um ambiente de teste para simular o funcionamento da função de impressão com o banco de dados ACCSELLER41.db.</p>
+    <a href="?Id=NF_Bol&Pedido=200000&Situacao=F&TipoMov=0&TipoDoc=5&Operacao=1">Simular Impressão de Boleto</a><br>
+    <a href="?Id=Carga">Simular Impressão de Carga</a>
+</body>
+</html>
