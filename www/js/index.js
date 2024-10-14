@@ -393,11 +393,10 @@ function salvar_arquivo_json_data(json) {
 
 function download_arquivo_json() {
     // Nome base do arquivo
-    let baseFileName = "dados";
-    let fileExtension = ".json";
-    
+    let baseFileName = "dados.json";
+
     // Caminho do arquivo no diretório de dados do aplicativo
-    let sourceFile = cordova.file.dataDirectory + baseFileName + fileExtension;
+    let sourceFile = cordova.file.dataDirectory + baseFileName;
 
     // Caminho de destino na pasta de Downloads
     let downloadDirPath = cordova.file.externalRootDirectory + "Download/";
@@ -406,37 +405,22 @@ function download_arquivo_json() {
     window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function (dirEntry) {
         // Cria o diretório de Downloads se não existir
         dirEntry.getDirectory("Download", { create: true }, function (downloadDir) {
-            // Função para verificar a existência de arquivos e criar um novo nome se necessário
-            function getNextAvailableFileName(callback) {
-                let counter = 0;
-                let newFileName;
-
-                // Função recursiva para verificar a existência do arquivo
-                function checkFile() {
-                    newFileName = `${baseFileName}${counter === 0 ? '' : `(${counter})`}${fileExtension}`;
-                    window.resolveLocalFileSystemURL(downloadDir.toURL() + newFileName, function () {
-                        counter++; // Arquivo existe, incrementa o contador
-                        checkFile(); // Verifica o próximo
-                    }, function () {
-                        callback(newFileName); // Arquivo não existe, retorna o nome disponível
-                    });
-                }
-
-                checkFile();
-            }
-
-            // Obtém um nome de arquivo disponível
-            getNextAvailableFileName(function (finalFileName) {
-                // Copia o arquivo do diretório de dados para o diretório de Downloads
-                window.resolveLocalFileSystemURL(sourceFile, function (fileEntry) {
-                    fileEntry.copyTo(downloadDir, finalFileName, function (newFileEntry) {
-                        alert("Arquivo JSON baixado com sucesso em " + newFileEntry.nativeURL);
-                    }, function (error) {
-                        alert("Erro ao copiar o arquivo: " + error);
-                    });
+            // Verifica se o arquivo já existe no diretório de Downloads
+            downloadDir.getFile(baseFileName, { create: false }, function (existingFileEntry) {
+                // Se o arquivo já existir, exclua-o
+                existingFileEntry.remove(function () {
+                    // Após excluir o arquivo existente, copie o novo arquivo
+                    copiarArquivo(downloadDir, sourceFile);
                 }, function (error) {
-                    alert("Erro ao acessar o arquivo de origem: " + error);
+                    alert("Erro ao remover o arquivo existente: " + error);
                 });
+            }, function (error) {
+                // Se o arquivo não existir, apenas copie o novo arquivo
+                if (error.code === FileError.NOT_FOUND_ERR) {
+                    copiarArquivo(downloadDir, sourceFile);
+                } else {
+                    alert("Erro ao acessar o arquivo existente: " + error);
+                }
             });
         }, function (error) {
             alert("Erro ao acessar o diretório de Downloads: " + error);
@@ -445,6 +429,20 @@ function download_arquivo_json() {
         alert("Erro ao acessar o diretório raiz externo: " + error);
     });
 }
+
+// Função para copiar o arquivo
+function copiarArquivo(downloadDir, sourceFile) {
+    window.resolveLocalFileSystemURL(sourceFile, function (fileEntry) {
+        fileEntry.copyTo(downloadDir, "dados.json", function (newFileEntry) {
+            alert("Arquivo JSON baixado com sucesso em " + newFileEntry.nativeURL);
+        }, function (error) {
+            alert("Erro ao copiar o arquivo: " + error);
+        });
+    }, function (error) {
+        alert("Erro ao acessar o arquivo de origem: " + error);
+    });
+}
+
 
 
 setupEventListeners();
