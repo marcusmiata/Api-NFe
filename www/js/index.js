@@ -226,6 +226,208 @@ const exNotaFiscal = {
           "infCpl": "DEVOLUCAO DE PRODUTOS REFERENTE A NF DE NO _104651____ DE _27/08/2024_. ; PEDIDO: 299 ; CARGA: 79 ; VENDEDOR: 11"
       }
 }
+
+const exNotaFiscal2 = {
+    "chave": "1111111111111111111112222222222222222333",
+    "ide": {
+        "cUF": "31",
+        "cNF": "10002140",
+        "natOp": "RETORNO DE REMESSA P/ DEP. FECH",
+        "mod": "55",
+        "serie": "1",
+        "nNF": "2040",
+        "dhEmi": "2024-09-10T10:37:24-03:00",
+        "dhSaiEnt": "2024-09-10T10:57:16-03:00",
+        "tpNF": "1",
+        "idDest": "1",
+        "cMunFG": "3152501",
+        "tpImp": "1",
+        "tpEmis": "1",
+        "cDV": "0",
+        "tpAmb": "2",
+        "finNFe": "1",
+        "indFinal": "0",
+        "indPres": "9",
+        "indIntermed": "0",
+        "procEmi": "3",
+        "verProc": "4.01_sebrae_b037"
+    },
+    "emit": {
+        "CNPJ": "05642329000331",
+        "xNome": "GUIMARAES CANDIDO SOUZA CIA LTDA",
+        "enderEmit": {
+            "xLgr": "RUA MAURO BRANDAO",
+            "nro": "68",
+            "xBairro": "NOVA POUSO ALEGR",
+            "cMun": "3152501",
+            "xMun": "POUSO ALEGRE",
+            "UF": "MG",
+            "CEP": "37550000",
+            "cPais": "1058",
+            "xPais": "BRASIL"
+        },
+        "IE": "5252313220217",
+        "CRT": "3"
+    },
+    "dest": {
+        "CNPJ": "05642329000170",
+        "xNome": "GUIMARAES CANDIDO SOUZA E CIA LTDA 1",
+        "enderDest": {
+            "xLgr": "AV ALBERTO DE BARROS COBRA",
+            "nro": "576",
+            "xCpl": "1",
+            "xBairro": "NOVA POUSO ALEGRE",
+            "cMun": "3152501",
+            "xMun": "POUSO ALEGRE",
+            "UF": "MG",
+            "CEP": "37550000",
+            "cPais": "1058",
+            "xPais": "BRASIL"
+        },
+        "indIEDest": "1",
+        "IE": "5252313220055",
+        "email": "guimaraescpd@gmail.com"
+    },
+    "det": [
+        {
+            "nItem": "1",
+            "prod": {
+                "cProd": "300",
+                "cEAN": "SEM GTIN",
+                "xProd": "MARLBORO FOREST FUSION MNT KSRB SEM GTIN",
+                "NCM": "24022000",
+                "CEST": "0400100",
+                "CFOP": "5906",
+                "uCom": "PT",
+                "qCom": "750.0000",
+                "vUnCom": "108.0000",
+                "vProd": "81000.00",
+                "cEANTrib": "SEM GTIN",
+                "uTrib": "PT",
+                "qTrib": "750.0000",
+                "vUnTrib": "108.0000",
+                "indTot": "1"
+            },
+            "imposto": {
+                "ICMS": {
+                    "ICMS60": {
+                        "orig": "0",
+                        "CST": "60",
+                        "vBCSTRet": "0.00",
+                        "pST": "0.00",
+                        "vICMSSubstituto": "0.00",
+                        "vICMSSTRet": "0.00"
+                    }
+                },
+                "PIS": {
+                    "PISNT": {
+                    "CST": "08"
+                    }
+                },
+                "COFINS": {
+                    "COFINSNT": {
+                        "CST": "08"
+                        }
+                    }
+                }
+            },
+        {
+            "nItem": "2",
+            "prod": {
+                "cProd": "112",
+                "cEAN": "SEM GTIN",
+                "xProd": "MARLBORO GOLD KS RCB SEM GTIN",
+                "NCM": "24022000",
+                "CEST": "0400100",
+                "CFOP": "5906",
+                "uCom": "PT",
+                "qCom": "250.0000",
+                "vUnCom": "103.6000",
+                "vProd": "25900.00",
+                "cEANTrib": "SEM GTIN",
+                "uTrib": "PT",
+                "qTrib": "250.0000",
+                "vUnTrib": "103.6000",
+                "indTot": "1"
+            },
+            "imposto": {
+                "ICMS": {
+                    "ICMS60": {
+                        "orig": "0",
+                        "CST": "60",
+                        "vBCSTRet": "0.00",
+                        "pST": "0.00",
+                        "vICMSSubstituto": "0.00",
+                        "vICMSSTRet": "0.00"
+                    }
+                },
+                "PIS": {
+                    "PISNT": {
+                        "CST": "08"
+                    }
+                },
+                "COFINS": {
+                    "COFINSNT": {
+                    "CST": "08"
+                    }
+                }
+            }
+        }
+        ],
+        "total": {
+            "ICMSTot": {
+            "vBC": "0.00",
+            "vICMS": "0.00",
+            "vICMSDeson": "0.00",
+            "vFCP": "0.00",
+            "vBCST": "0.00",
+            "vST": "0.00",
+            "vFCPST": "0.00",
+            "vFCPSTRet": "0.00",
+            "vProd": "106900.00",
+            "vFrete": "0.00",
+            "vSeg": "0.00",
+            "vDesc": "0.00",
+            "vII": "0.00",
+            "vIPI": "0.00",
+            "vIPIDevol": "0.00",
+            "vPIS": "0.00",
+            "vCOFINS": "0.00",
+            "vOutro": "0.00",
+            "vNF": "106900.00"
+        }
+    },
+    "transp": {
+        "modFrete": "4",
+        "transporta": {
+            "CNPJ": "05642329000170",
+            "xNome": "GUIMARAES CANDIDO SOUZA E CIA LTDA",
+            "IE": "5252313220055",
+            "xEnder": "AV ALBERTO DE BARROS COBRA 576 1",
+            "xMun": "POUSO ALEGRE",
+            "UF": "MG"
+        },
+        "vol": {
+            "qVol": "1000",
+            "esp": "VOLUMES",
+            "pesoL": "240.000",
+            "pesoB": "250.000"
+        }
+    },
+    "pag": {
+        "detPag": [
+            {
+                "indPag": "0",
+                "tPag": "90",
+                "vPag": "0.00"
+            }
+          ]
+    },
+        "infAdic": {
+            "infAdFisco": "ICMS SUSP CFE ART 19 ANEX 3 DECRETO 38104/96 - S.T.-BC:91,250.00 Vr:15,591.50",
+            "infCpl": "DEVOLUCAO DE PRODUTOS REFERENTE A NF DE NO _104651____ DE _27/08/2024_. ; PEDIDO: 299 ; CARGA: 79 ; VENDEDOR: 11"
+        }
+  }
 //======================================================================================================
 let responseString = "";
 
@@ -337,21 +539,23 @@ function setupEventListeners() {
   });
 
   document.getElementById("send").addEventListener('click', function() {
-      enviarEmail(exCodigoEmpresa, gerarToken(exCodigoEmpresa), exnNf, exEmail);
+    salvar_arquivo_json_data(exNotaFiscal2);
   });
 
   document.getElementById("delete").addEventListener('click', function() {
       download_arquivo_json();
   });
 
-  document.getElementById("all").addEventListener('click', function() {
-      verTudo(exCodigoEmpresa, gerarToken(exCodigoEmpresa));
-  });
-}
-
+//   document.getElementById("all").addEventListener('click', function() {
+//       verTudo(exCodigoEmpresa, gerarToken(exCodigoEmpresa));
+//   });
 document.getElementById("all").addEventListener('click', function(){
     salvar_arquivo_json_data(exNotaFiscal);
+    
 });
+}
+
+
 
 function salvar_arquivo_json_data(json) {
     // Converter o JSON em string
@@ -368,6 +572,28 @@ function salvar_arquivo_json_data(json) {
 
     // Função para salvar o arquivo no diretório de dados do app
     window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (dir) {
+        // Verifica se o arquivo já existe
+        dir.getFile(fileName, { create: false }, function (fileEntry) {
+            // Se o arquivo existir, exclua-o
+            fileEntry.remove(function () {
+                console.log("Arquivo antigo excluído.");
+
+                // Após excluir, cria um novo arquivo e grava o conteúdo JSON
+                criarNovoArquivo(dir, fileName, jsonData);
+
+            }, function (error) {
+                alert("Erro ao excluir o arquivo antigo: " + error);
+            });
+        }, function () {
+            // Caso o arquivo não exista, simplesmente cria o novo
+            criarNovoArquivo(dir, fileName, jsonData);
+        });
+    }, function (error) {
+        alert("Erro ao acessar o diretório: " + error);
+    });
+
+    // Função para criar e gravar o novo arquivo
+    function criarNovoArquivo(dir, fileName, jsonData) {
         dir.getFile(fileName, { create: true }, function (fileEntry) {
             fileEntry.createWriter(function (fileWriter) {
                 fileWriter.onwriteend = function () {
@@ -386,10 +612,9 @@ function salvar_arquivo_json_data(json) {
         }, function (error) {
             alert("Erro ao acessar o sistema de arquivos: " + error);
         });
-    }, function (error) {
-        alert("Erro ao acessar o diretório: " + error);
-    });
+    }
 }
+
 
 function download_arquivo_json() {
     // Nome base do arquivo

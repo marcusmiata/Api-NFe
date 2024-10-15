@@ -18,6 +18,28 @@ function salvar_arquivo_json_data(json) {
 
     // Função para salvar o arquivo no diretório de dados do app
     window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (dir) {
+        // Verifica se o arquivo já existe
+        dir.getFile(fileName, { create: false }, function (fileEntry) {
+            // Se o arquivo existir, exclua-o
+            fileEntry.remove(function () {
+                console.log("Arquivo antigo excluído.");
+
+                // Após excluir, cria um novo arquivo e grava o conteúdo JSON
+                criarNovoArquivo(dir, fileName, jsonData);
+
+            }, function (error) {
+                alert("Erro ao excluir o arquivo antigo: " + error);
+            });
+        }, function () {
+            // Caso o arquivo não exista, simplesmente cria o novo
+            criarNovoArquivo(dir, fileName, jsonData);
+        });
+    }, function (error) {
+        alert("Erro ao acessar o diretório: " + error);
+    });
+
+    // Função para criar e gravar o novo arquivo
+    function criarNovoArquivo(dir, fileName, jsonData) {
         dir.getFile(fileName, { create: true }, function (fileEntry) {
             fileEntry.createWriter(function (fileWriter) {
                 fileWriter.onwriteend = function () {
@@ -36,9 +58,7 @@ function salvar_arquivo_json_data(json) {
         }, function (error) {
             alert("Erro ao acessar o sistema de arquivos: " + error);
         });
-    }, function (error) {
-        alert("Erro ao acessar o diretório: " + error);
-    });
+    }
 }
 
 function download_arquivo_json() {

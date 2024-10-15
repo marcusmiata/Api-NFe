@@ -58,32 +58,79 @@ function gerarItensDet(jsonOriginais) {
 
 // =================================== ROTINA PARA TESTES MANUAIS ===================================
 
-var jsonOriginais = {
-    "itens": {
-        '1': {
-            "Produto": "Produto A",
-            "Descricao": "Descrição do Produto A",
-            "NCM": "12345678",
-            "Unidade": "UN",
-            "QtdeU": 10,
-            "PrUnitario": 50.00
-        },
-        '2': {
-            "Produto": "Produto B",
-            "Descricao": "Descrição do Produto B",
-            "NCM": "87654321",
-            "Unidade": "UN",
-            "QtdeU": 5,
-            "PrUnitario": 100.00
-        }
-    }
-};
+var lDTItens = [];
+var jsonOriginais = {};
+var jsonNovo = {};
+
+jsonOriginais["itens"] = {};
+
+
+// Simulando o lDTItens
+
+lDTItens.push({
+    QtdeU: 10,
+    QtdeF: 5,
+    CodST: "01", 
+    BCalcSTProd: 100.00, 
+    ValorSTProd: 18.00, 
+    AliqIcms: 12.00, 
+    NCM: "12345678", 
+    PrUnitario: 50.00,
+    Produto: "Produto A",
+    Descricao: "Descrição do Produto A", 
+    Unidade: "UN",
+    QFrUn: 2, 
+    Fracao: 1, 
+    QuaPedida: 10 
+});
+
+lDTItens.push({
+    QtdeU: 20,
+    QtdeF: 10,
+    CodST: "02",
+    BCalcSTProd: 200.00, 
+    ValorSTProd: 36.00, 
+    AliqIcms: 18.00, 
+    NCM: "87654321",
+    PrUnitario: 60.00, 
+    Produto: "Produto B", 
+    Descricao: "Descrição do Produto B", 
+    Unidade: "KG", 
+    QFrUn: 1, 
+    Fracao: 1, 
+    QuaPedida: 20 
+});
+
+// Exibindo o vetor lDTItens no console
+console.log(JSON.stringify(lDTItens, null, 2));
+
+
+for (var i = 0; i < lDTItens.length; i++) {
+    // Criando o item com todos os atributos e um índice 'n'
+    jsonOriginais["itens"][i + 1] = {
+        "n": (i + 1).toString(),    // índice do item
+        "QtdeU": lDTItens[i].QtdeU,
+        "QtdeF": lDTItens[i].QtdeF,
+        "CodST": lDTItens[i].CodST,
+        "BCalcSTProd": lDTItens[i].BCalcSTProd,
+        "ValorSTProd": lDTItens[i].ValorSTProd,
+        "AliqIcms": lDTItens[i].AliqIcms,
+        "NCM": lDTItens[i].NCM,
+        "PrUnitario": lDTItens[i].PrUnitario,
+        "Produto": lDTItens[i].Produto,
+        "Descricao": lDTItens[i].Descricao,
+        "Unidade": lDTItens[i].Unidade,
+        "QFrUn": lDTItens[i].QFrUn,
+        "Fracao": lDTItens[i].Fracao,
+        "QuaPedida": lDTItens[i].QuaPedida
+    };
+}
 
 // Variáveis adicionais que a função espera
 var CFO = "5102";
-var fDespAcess = 0.05; // Por exemplo, uma taxa de 5%
+var fDespAcess = 0.05; 
 
-// Função de arredondamento (se não estiver definida)
+// Função de arredondamento
 function Round(value, decimals) {
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
@@ -91,6 +138,7 @@ function Round(value, decimals) {
 // Chamar a função gerarItensDet
 var resultadoDet = gerarItensDet(jsonOriginais);
 
-// Exibir o resultado no console para inspeção
-console.log("Json:  ");
-console.log(JSON.stringify(resultadoDet, null, 2));
+
+// Atribuir o resultado para o campo det de um outro json
+jsonNovo['Det'] = resultadoDet;
+alert(JSON.stringify(jsonNovo['Det'], null, 2));
